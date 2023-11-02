@@ -1,0 +1,21 @@
+.ComponentC {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid #000;
+  background: #686868;
+  padding: 20px;
+
+  &__Title {
+    margin-bottom: 20px;
+  }
+
+  &__Content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
