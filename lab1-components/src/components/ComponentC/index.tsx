@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 
 interface ComponentCProps {
   title: string;
+  onClick?: (title: string) => void; // ? === необязательные параметры
 }
 
 const ComponentC: FC<ComponentCProps> = (props) => {
@@ -11,6 +12,8 @@ const ComponentC: FC<ComponentCProps> = (props) => {
     event.stopPropagation(); // Запрещаем всплытие события
 
     alert(props.title);
+
+    if (props.onClick) props.onClick(props.title)
   };
 
   return (
