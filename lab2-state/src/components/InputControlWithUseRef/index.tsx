@@ -34,7 +34,7 @@ const InputControlWithUseRef: FC<InputControlWithUseRefProps> = (props) => {
 
       // Функция вызовится один раз после размонтирования компонента
       return () => {
-        unsubscribe(); // Отписываемся от событие ввода
+        unsubscribe(); // Отписываемся от события ввода
       };
     },
     []
