@@ -33,7 +33,10 @@ const TodoForm: FC<TodoFormProps> = (props) => {
 
   return (
     <form className={styles.TodoForm}>
+      {/* Компонент основанный на useState (рекомендуется на практике) */}
       <InputControlWithUseState value={description} onInput={handleInput} />
+
+      {/* Компонент основанный на useRef (не рекомендуется на практике) */}
       {/* <InputControlWithUseRef value={description} onInput={handleInput} /> */}
 
       <button className={styles.TodoForm__Add} onClick={handleAdd}>
