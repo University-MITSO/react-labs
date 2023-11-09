@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import React, { FC, useState } from "react";
 import { TodoModel } from "../../models/Todo";
 import InputControlWithUseState from "../InputControlWithUseState";
+// import InputControlWithUseRef from "../InputControlWithUseRef";
 
 // Типизируем входные параметры компоненты
 interface TodoFormProps {
@@ -28,13 +29,13 @@ const TodoForm: FC<TodoFormProps> = (props) => {
 
     // Если есть функция props.onAdd, то вызываем ее, что бы передать todo родительской компоненте, для дальнейшей обработки
     if (props.onAdd) props.onAdd(todo);
-
-    setDescription(""); // Очищаем локальное состояние, что вызывает перерндер компоненты
   };
 
   return (
     <form className={styles.TodoForm}>
       <InputControlWithUseState value={description} onInput={handleInput} />
+      {/* <InputControlWithUseRef value={description} onInput={handleInput} /> */}
+
       <button className={styles.TodoForm__Add} onClick={handleAdd}>
         Add
       </button>

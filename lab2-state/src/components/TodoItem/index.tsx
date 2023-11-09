@@ -24,7 +24,7 @@ const TodoItem: FC<TodoItemProps> = (props) => {
         {props.todo.isChecked ? "Non check" : "Check"}
       </button>
       <span>{props.todo.description}</span>
-      <button onClick={handleRemove}>Remove</button>
+      <button className={styles.TodoItem__Remove} onClick={handleRemove}>Remove</button>
     </div>
   );
 };

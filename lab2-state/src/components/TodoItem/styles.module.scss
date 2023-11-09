@@ -1,0 +1,21 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    span {
+        flex-grow: 1;
+        padding: 0 20px;
+    }
+
+    &__Remove {
+        background-color: #FF5722;
+    }
+}
