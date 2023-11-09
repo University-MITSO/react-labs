@@ -1,13 +1,25 @@
 .TodoForm {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 
-  input {
-    flex-grow: 1;
+  &__InputControlWrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__InputControlGroup {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 5px;
+    }
   }
 
   button {
+    width: 100%;
     margin-left: 10px;
   }
 }

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import React, { FC, useState } from "react";
 import { TodoModel } from "../../models/Todo";
 import InputControlWithUseState from "../InputControlWithUseState";
-// import InputControlWithUseRef from "../InputControlWithUseRef";
+import InputControlWithUseRef from "../InputControlWithUseRef";
 
 // Типизируем входные параметры компоненты
 interface TodoFormProps {
@@ -33,16 +33,23 @@ const TodoForm: FC<TodoFormProps> = (props) => {
 
   return (
     <form className={styles.TodoForm}>
-      {/* Компонент основанный на useState (рекомендуется на практике) */}
-      <InputControlWithUseState value={description} onInput={handleInput} />
+      <div className={styles.TodoForm__InputControlWrapper}>
+        <div className={styles.TodoForm__InputControlGroup}>
+          {/* Компонент основанный на useState (рекомендуется на практике) */}
+          <p>Компонент основанный на <b>useState</b> (рекомендуется на практике)</p>
+          <InputControlWithUseState value={description} onInput={handleInput} />
+        </div>
 
-      {/* Компонент основанный на useRef (не рекомендуется на практике) */}
-      {/* <InputControlWithUseRef value={description} onInput={handleInput} /> */}
+        <div className={styles.TodoForm__InputControlGroup}>
+          {/* Компонент основанный на useRef (не рекомендуется на практике) */}
+          <p>Компонент основанный на <b>useRef</b> (не рекомендуется на практике)</p>
+          <InputControlWithUseRef value={description} onInput={handleInput} />
+        </div>
+      </div>
 
       <button className={styles.TodoForm__Add} onClick={handleAdd}>
         Add
       </button>
-      <button className={styles.TodoForm__CheckAll}>Check All</button>
     </form>
   );
 };
