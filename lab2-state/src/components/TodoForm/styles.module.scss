@@ -12,14 +12,19 @@
   &__InputControlGroup {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     p {
+      margin-top: 0;
       margin-bottom: 5px;
     }
   }
 
   button {
     width: 100%;
-    margin-left: 10px;
   }
 }

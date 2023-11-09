@@ -19,12 +19,18 @@ const TodoItem: FC<TodoItemProps> = (props) => {
   };
 
   return (
-    <div className={styles.TodoItem}>
-      <button onClick={handleCheck}>
+    <div
+      className={`${styles.TodoItem} ${
+        props.todo.isChecked ? styles.TodoItem__Checked : ""
+      }`}
+    >
+      <button className={styles.TodoItem__Toggle} onClick={handleCheck}>
         {props.todo.isChecked ? "Non check" : "Check"}
       </button>
       <span>{props.todo.description}</span>
-      <button className={styles.TodoItem__Remove} onClick={handleRemove}>Remove</button>
+      <button className={styles.TodoItem__Remove} onClick={handleRemove}>
+        Remove
+      </button>
     </div>
   );
 };
